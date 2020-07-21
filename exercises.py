@@ -78,7 +78,7 @@ def shortest_path(start, end, maze):
     queue = []
     #First cell added to queue is start,
     queue.append((start[0], start[1]))
-    #previous keeps track of the path, and gives the right path at the end
+    #previous keeps track of the path, and gives the shortest path at the end
     previous = {}
     while queue:
         #Current cell is removed from queue
@@ -92,4 +92,5 @@ def shortest_path(start, end, maze):
                 visited[x_cell][y_cell] = 2
                 previous[(x_cell + move[0], y_cell + move[1])] = (x_cell, y_cell)
                 queue.append((x_cell + move[0], y_cell + move[1]))
+    #No solution has been found, false is returned
     return False
